@@ -45,6 +45,13 @@ calculatorOperators.forEach(value => value.addEventListener('click', () => {
         let splitString = displayValue.split(operatingValue);
         displayValue = operation(Number(splitString[0]),operatingValue,Number(splitString[1]));
         calculatorDisplay.textContent = displayValue;
+        operatingQuery = false;
+    } else if (operatingQuery == true) {
+        let splitString = displayValue.split(operatingValue);
+        displayValue = operation(Number(splitString[0]),operatingValue,Number(splitString[1]));
+        calculatorDisplay.textContent = displayValue+value.textContent;
+        operatingValue = value.textContent;
+        displayValue += value.textContent;
     } else {
         calculatorDisplay.textContent += value.textContent;
         displayValue += value.textContent;
