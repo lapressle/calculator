@@ -1,0 +1,23 @@
+.calculatorFrame {
+    border: 1px solid black;
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin: auto;
+    width: 50%;
+    height: 300px;
+}
+
+.calculatorDisplay {
+    border: 1px solid black;
+    margin: 5%;
+    text-align: right;
+}
+
+.calculatorButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-evenly;
+}
