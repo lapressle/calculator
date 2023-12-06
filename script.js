@@ -26,14 +26,22 @@ function operation(numberOne,operator,numberTwo) {
     }
 }
 
-displayValue = 42;
+displayValue = null;
+
+operatingQuery = false;
 
 const calculatorDisplay = document.querySelector('.calculatorDisplay');
 const calculatorNumbers = document.querySelectorAll('.number');
 const calculatorOperators = document.querySelectorAll('.operator');
 
 calculatorNumbers.forEach(number => number.addEventListener('click', () => {
-    calculatorDisplay.textContent = number.textContent;
-    displayValue = number.textContent;
+    if (operatingQuery){
+
+    } else {
+        calculatorDisplay.textContent += number.textContent;
+        displayValue += number.textContent;
+    }
 }))
+
+
 
