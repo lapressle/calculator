@@ -25,3 +25,15 @@ function operation(numberOne,operator,numberTwo) {
         return divide(numberOne,numberTwo);
     }
 }
+
+displayValue = 42;
+
+const calculatorDisplay = document.querySelector('.calculatorDisplay');
+const calculatorNumbers = document.querySelectorAll('.number');
+const calculatorOperators = document.querySelectorAll('.operator');
+
+calculatorNumbers.forEach(number => number.addEventListener('click', () => {
+    calculatorDisplay.textContent = number.textContent;
+    displayValue = number.textContent;
+}))
+
