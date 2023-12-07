@@ -54,10 +54,15 @@ calculatorNumbers.forEach(number => number.addEventListener('click', () => {
 
 calculatorOperators.forEach(value => value.addEventListener('click', () => {
     if (value.textContent === '=') {
-        let splitString = displayValue.split(operatingValue);
-        displayValue = operation(Number(splitString[0]),operatingValue,Number(splitString[1]));
-        calculatorDisplay.textContent = displayValue;
-        operatingQuery = false;
+        if (displayValue.includes('+') || displayValue.includes('-') || displayValue.includes('*') || displayValue.includes('/')) {
+            let splitString = displayValue.split(operatingValue);
+            displayValue = operation(Number(splitString[0]),operatingValue,Number(splitString[1]));
+            calculatorDisplay.textContent = displayValue;
+            operatingQuery = false;
+        } else {
+            return;
+        }
+
     } else if (operatingQuery == true) {
         let splitString = displayValue.split(operatingValue);
         displayValue = operation(Number(splitString[0]),operatingValue,Number(splitString[1]));
