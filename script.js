@@ -87,6 +87,7 @@ calculatorOperators.forEach(value => value.addEventListener('click', () => {
 calculatorClear.addEventListener('click', () => {
     calculatorDisplay.textContent = '';
     displayValue = '';
+    operatingQuery = false;
 })
 
 calculatorInvert.addEventListener('click', () => {
