@@ -72,8 +72,14 @@ calculatorClear.addEventListener('click', () => {
 })
 
 calculatorInvert.addEventListener('click', () => {
-    calculatorDisplay.textContent = String(-(Number(displayValue)));
-    displayValue  = String(-(Number(displayValue)));
+    if (operatingQuery==true) {
+        let splitString = displayValue.split(operatingValue);
+        calculatorDisplay.textContent = splitString[0]+operatingValue+String(-(Number(splitString[1])));
+        displayValue = splitString[0]+operatingValue+String(-(Number(splitString[1])));
+    } else {
+        calculatorDisplay.textContent = String(-(Number(displayValue)));
+        displayValue  = String(-(Number(displayValue)));
+    }
 })
 
 
