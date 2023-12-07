@@ -1,1 +1,2 @@
 # calculator
+This is the final project in the Foundations course for The Odin Project. It involves making a functional calculator through a combination of html, css, and js. This project showcases some basic styling using css, including flexbox for button positioning. The functionality of the calculator involves multiple eventListeners with conditionals to help avoid errors. Overall a few steps to take further would be improving the display to work with overflow better as well as adding functionality to display the memory of past inputs.
