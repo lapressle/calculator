@@ -40,6 +40,7 @@ const calculatorNumbers = document.querySelectorAll('.number');
 const calculatorOperators = document.querySelectorAll('.operator');
 const calculatorClear = document.querySelector('.clear');
 const calculatorInvert = document.querySelector('.negative');
+const calculatorDecimal = document.querySelector('.decimal');
 
 calculatorNumbers.forEach(number => number.addEventListener('click', () => {
     calculatorDisplay.textContent += number.textContent;
@@ -80,6 +81,27 @@ calculatorInvert.addEventListener('click', () => {
         calculatorDisplay.textContent = String(-(Number(displayValue)));
         displayValue  = String(-(Number(displayValue)));
     }
+})
+
+calculatorDecimal.addEventListener('click', () => {
+    if (operatingQuery==true) {
+        let splitString = displayValue.split(operatingValue);
+        if (splitString[1].includes('.')) {
+            return;
+        } else {
+            calculatorDisplay.textContent = splitString[0]+operatingValue+splitString[1]+'.';
+            displayValue = splitString[0]+operatingValue+splitString[1]+'.';
+        }
+    } else {
+        if (displayValue.includes('.')) {
+            return;
+        } else {
+            calculatorDisplay.textContent += '.';
+            displayValue += '.';
+        }
+
+    }
+
 })
 
 
