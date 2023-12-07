@@ -7,14 +7,22 @@ function subtract(numberOne,numberTwo) {
 }
 
 function multiply(numberOne,numberTwo) {
-    return numberOne * numberTwo;
+    if (String(numberOne * numberTwo).length>8) {
+        return Number(String(numberOne * numberTwo).slice(0, 8))
+    } else {
+        return numberOne * numberTwo;
+    }
 }
 
 function divide(numberOne,numberTwo) {
     if (numberTwo ==0) {
         alert('Nice try but do not do this!')
     } else {
-        return numberOne / numberTwo;
+        if (String(numberOne / numberTwo).length>8) {
+            return Number(String(numberOne/numberTwo).slice(0, 8))
+        } else {
+            return numberOne / numberTwo;
+        }
     }
 }
 
@@ -62,7 +70,6 @@ calculatorOperators.forEach(value => value.addEventListener('click', () => {
         } else {
             return;
         }
-
     } else if (operatingQuery == true) {
         let splitString = displayValue.split(operatingValue);
         displayValue = operation(Number(splitString[0]),operatingValue,Number(splitString[1]));
