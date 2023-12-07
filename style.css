@@ -1,13 +1,19 @@
-
+body {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    min-height: 100vh;
+    background-color: palevioletred;
+}
 
 .calculatorFrame {
     border: 1px solid black;
+    border-radius: 10px;
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    width: 50%;
+    width: 40%;
     margin: auto;
-    height: 300px;
+    height: 70vh;
+    background-color: navy;
 }
 
 .calculatorDisplay {
@@ -16,8 +22,9 @@
     margin: 5%;
     justify-content: flex-end;
     align-items: flex-end;
-    height:30%;
-    font-size:xx-large;
+    height:20%;
+    font-size:40pt;
+    background-color: white;;
 }
 
 .calculatorButtons {
@@ -33,10 +40,16 @@
 .calculatorButton {
     display: flex;
     flex: 1 1 0;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    border-radius: 20px;
 }
 
-
 .calculatorButton.zero {
-    display: flex;
     flex: 2 1 0;
+}
+
+.calculatorButton.operator {
+    background-color: rebeccapurple;
 }
