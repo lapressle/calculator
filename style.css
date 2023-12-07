@@ -10,7 +10,7 @@ body {
     display: flex;
     flex: 1 1 auto;
     flex-direction: column;
-    width: 40%;
+    width: 50vh;
     margin: auto;
     height: 70vh;
     background-color: navy;
