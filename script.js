@@ -38,6 +38,7 @@ let operatingQuery = false;
 const calculatorDisplay = document.querySelector('.calculatorDisplay');
 const calculatorNumbers = document.querySelectorAll('.number');
 const calculatorOperators = document.querySelectorAll('.operator');
+const calculatorClear = document.querySelector('.clear');
 
 calculatorNumbers.forEach(number => number.addEventListener('click', () => {
     calculatorDisplay.textContent += number.textContent;
@@ -63,6 +64,12 @@ calculatorOperators.forEach(value => value.addEventListener('click', () => {
         operatingQuery = true;
     }
 }))
+
+calculatorClear.addEventListener('click', () => {
+    calculatorDisplay.textContent = '';
+    displayValue = '';
+})
+
 
 
 

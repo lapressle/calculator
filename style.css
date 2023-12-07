@@ -24,7 +24,8 @@ body {
     align-items: flex-end;
     height:20%;
     font-size:40pt;
-    background-color: white;;
+    background-color: white;
+    overflow: hidden;
 }
 
 .calculatorButtons {
