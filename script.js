@@ -39,6 +39,7 @@ const calculatorDisplay = document.querySelector('.calculatorDisplay');
 const calculatorNumbers = document.querySelectorAll('.number');
 const calculatorOperators = document.querySelectorAll('.operator');
 const calculatorClear = document.querySelector('.clear');
+const calculatorInvert = document.querySelector('.negative');
 
 calculatorNumbers.forEach(number => number.addEventListener('click', () => {
     calculatorDisplay.textContent += number.textContent;
@@ -69,6 +70,13 @@ calculatorClear.addEventListener('click', () => {
     calculatorDisplay.textContent = '';
     displayValue = '';
 })
+
+calculatorInvert.addEventListener('click', () => {
+    calculatorDisplay.textContent = String(-(Number(displayValue)));
+    displayValue  = String(-(Number(displayValue)));
+})
+
+
 
 
 
