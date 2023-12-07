@@ -18,6 +18,10 @@ function divide(numberOne,numberTwo) {
     }
 }
 
+function percent(number) {
+    return number/100;
+}
+
 function operation(numberOne,operator,numberTwo) {
     if (operator ==='+') {
         return add(numberOne,numberTwo);
@@ -41,6 +45,7 @@ const calculatorOperators = document.querySelectorAll('.operator');
 const calculatorClear = document.querySelector('.clear');
 const calculatorInvert = document.querySelector('.negative');
 const calculatorDecimal = document.querySelector('.decimal');
+const calculatorPercent = document.querySelector('.percent');
 
 calculatorNumbers.forEach(number => number.addEventListener('click', () => {
     calculatorDisplay.textContent += number.textContent;
@@ -99,9 +104,20 @@ calculatorDecimal.addEventListener('click', () => {
             calculatorDisplay.textContent += '.';
             displayValue += '.';
         }
-
     }
+})
 
+calculatorPercent.addEventListener('click', () => {
+    if (operatingQuery==true) {
+        let splitString = displayValue.split(operatingValue);
+        let percentage = percent(Number(splitString[1]))
+        calculatorDisplay.textContent = splitString[0]+operatingValue+String(percentage);
+        displayValue = splitString[0]+operatingValue+String(percentage);
+    } else {
+        let percentage = percent(Number(displayValue));
+        calculatorDisplay.textContent = String(percentage);
+        displayValue = String(percentage);
+    }
 })
 
 
