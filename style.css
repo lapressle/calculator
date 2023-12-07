@@ -1,23 +1,42 @@
+
+
 .calculatorFrame {
     border: 1px solid black;
     display: flex;
-    flex: 1 1 0;
+    flex: 1 1 auto;
     flex-direction: column;
-    justify-content: space-evenly;
-    margin: auto;
     width: 50%;
+    margin: auto;
     height: 300px;
 }
 
 .calculatorDisplay {
+    display: flex;
     border: 1px solid black;
     margin: 5%;
-    text-align: right;
+    justify-content: flex-end;
+    align-items: flex-end;
+    height:30%;
+    font-size:xx-large;
 }
 
 .calculatorButtons {
     display: flex;
-    flex-wrap: wrap;
+    flex: 1 1 0;
+    justify-content: space-around;
     gap: 5px;
-    justify-content: space-evenly;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.calculatorButton {
+    display: flex;
+    flex: 1 1 0;
+}
+
+
+.calculatorButton.zero {
+    display: flex;
+    flex: 2 1 0;
 }
